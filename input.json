@@ -1,0 +1,158 @@
+{
+  "productionStartDate": "2018-06-01T00:00:00",
+  "operations": [
+    "frezowanie",
+    "wiercenie",
+    "szlifowanie",
+    "malowanie",
+    "pakowanie"
+  ],
+  "rawMaterials": [
+    "metal",
+    "farba",
+    "opakowanie"
+  ],
+  "products": [
+    {
+      "id": 1,
+      "bom": {
+        "metal": 3,
+        "farba": 2,
+        "opakowanie": 1
+      },
+      "operationTimes": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "id": 2,
+      "bom": {
+        "metal": 5,
+        "farba": 1,
+        "opakowanie": 5
+      },
+      "operationTimes": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "bom": {
+        "metal": 1,
+        "farba": 1,
+        "opakowanie": 1
+      },
+      "operationTimes": [
+        1,
+        2,
+        1,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "id": 4,
+      "bom": {
+        "metal": 3,
+        "farba": 3,
+        "opakowanie": 3
+      },
+      "operationTimes": [
+        1,
+        1,
+        1,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "id": 5,
+      "bom": {
+        "metal": 2,
+        "farba": 3,
+        "opakowanie": 2
+      },
+      "operationTimes": [
+        1,
+        2,
+        2,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "id": 6,
+      "bom": {
+        "metal": 5,
+        "farba": 1,
+        "opakowanie": 5
+      },
+      "operationTimes": [
+        2,
+        1,
+        2,
+        1,
+        2,
+        1
+      ]
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "dueDate": "2018-06-04T00:00:00",
+      "productId": 1,
+      "qty": 4
+    },
+    {
+      "id": 2,
+      "dueDate": "2018-06-04T00:00:00",
+      "productId": 2,
+      "qty": 6
+    },
+    {
+      "id": 3,
+      "dueDate": "2018-06-04T00:00:00",
+      "productId": 3,
+      "qty": 11
+    },
+    {
+      "id": 4,
+      "dueDate": "2018-06-04T00:00:00",
+      "productId": 3,
+      "qty": 2
+    },
+    {
+      "id": 5,
+      "dueDate": "2018-06-04T00:00:00",
+      "productId": 5,
+      "qty": 9
+    }
+  ],
+  "deliveries": [
+    {
+      "id": 1,
+      "date": "2018-06-01T00:00:00",
+      "materialsDelivered": {
+        "metal": 50,
+        "farba": 50,
+        "opakowanie": 50
+      }
+    }
+  ],
+  "maxGeneration": 2000,
+  "populationSize":100
+}
