@@ -57,10 +57,13 @@ public class GeneticAlgorithm {
 
     private Individual randonIndividual(InputData data) {
         //todo przed walidacja
+        return null;
     }
 
     private boolean validateIndividual(Individual individual) {
         //todo
+
+        return false;
     }
 
     private int assessIndividual(Individual individual, InputData data) {
@@ -71,5 +74,7 @@ public class GeneticAlgorithm {
 
     private Population generateChildren(Population parents) {
         //todo
+
+        return null;
     }
 }

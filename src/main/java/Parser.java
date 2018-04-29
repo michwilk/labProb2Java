@@ -11,6 +11,9 @@ import java.util.*;
 
 public class Parser {
 
+    public void parseOutput(String arg, Individual solution) {
+    }
+
     public InputData parseInput(String path) throws IOException, ParseException, java.text.ParseException {
         JSONParser parser = new JSONParser();
         Object obj = parser.parse(new FileReader(path));
@@ -24,20 +27,14 @@ public class Parser {
         final List<Order> orders = parseOrders((JSONArray) jsonInput.get("orders"));
         final List<Product> products = parseProducts((JSONArray) jsonInput.get("products"));
         final List<Delivery> deliveries = parseDeliveries((JSONArray) jsonInput.get("deliveries"));
-        int[] durations = computeDurationsOfOrders(orders,products);
+        int[] durations = computeDurationsOfOrders(orders, products);
 
 
         return new InputData(productionStartDate, operations, rawMaterials, orders, products,
                 deliveries, maxGeneration, populationSize, durations);
     }
 
-    private int[] computeDurationsOfOrders(List<Order> orders, List<Product> products) {
-        int[] durations = new int[orders.size()];
-        for (int i = 0; i < orders.size(); i++) {
-            Order order = orders.get(i);
 
-        }
-    }
 
     private List<Delivery> parseDeliveries(JSONArray array) throws java.text.ParseException {
         List<Delivery> deliveries = new ArrayList<Delivery>();
@@ -122,6 +119,14 @@ public class Parser {
         return date;
     }
 
-    public void parseOutput(String arg, Individual solution) {
+
+
+    private int[] computeDurationsOfOrders(List<Order> orders, List<Product> products) {
+        int[] durations = new int[orders.size()];
+        for (int i = 0; i < orders.size(); i++) {
+            Order order = orders.get(i);//todo
+
+        }
+        return null;
     }
 }
