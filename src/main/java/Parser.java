@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.stream.IntStream;
 
 public class Parser {
 
@@ -33,7 +34,6 @@ public class Parser {
         return new InputData(productionStartDate, operations, rawMaterials, orders, products,
                 deliveries, maxGeneration, populationSize, durations);
     }
-
 
 
     private List<Delivery> parseDeliveries(JSONArray array) throws java.text.ParseException {
@@ -120,13 +120,21 @@ public class Parser {
     }
 
 
-
     private int[] computeDurationsOfOrders(List<Order> orders, List<Product> products) {
         int[] durations = new int[orders.size()];
         for (int i = 0; i < orders.size(); i++) {
-            Order order = orders.get(i);//todo
-
+            Order order = orders.get(i);
+            Product product = products.stream().filter(p -> p.getId() == order.getProductId()).findFirst().get();
+            int timeFirst = IntStream.of(product.getOperationTimes()).sum();
+            int delay = product.getOperationTimes()[0];
+            for (int j = 1; j < product.getOperationTimes().length; j++) {
+                if (product.getOperationTimes()[i] > product.getOperationTimes()[i - 1] + delay) {
+                    delay += product.getOperationTimes()[i] - delay;
+                }
+            }
+            int totalTime = timeFirst + (order.getQty() - 1) * delay;
+            durations[i] = totalTime;
         }
-        return null;
+        return durations;
     }
 }

@@ -5,6 +5,7 @@ public class GeneticAlgorithm {
         Population population = generatePopulation(data);
         while (generation < data.getMaxGeneration()) {
             generation++;
+            System.out.println("Generation " + generation);
             Population children = generateChildren(population);
             population = children;
         }
@@ -48,22 +49,15 @@ public class GeneticAlgorithm {
 
         do {
             tryCount++;
-            individual = randonIndividual(data);
-            if (tryCount > 100) throw new IllegalArgumentException();
+            individual = randomIndividual(data);
+            if (tryCount > 100) throw new IllegalArgumentException("Cant create proper individual");
         } while (!validateIndividual(individual));
 
         return individual;
     }
 
-    private Individual randonIndividual(InputData data) {
-        //todo przed walidacja
-        return null;
-    }
-
     private boolean validateIndividual(Individual individual) {
-        //todo
-
-        return false;
+        return validateMachines(individual) && validateDeadlines(individual) && validateSupplies(individual);
     }
 
     private int assessIndividual(Individual individual, InputData data) {
@@ -71,10 +65,25 @@ public class GeneticAlgorithm {
         return 0;
     }
 
+    private Individual randomIndividual(InputData data) {
+        //todo przed walidacja
+        return null;
+    }
+
+    private boolean validateSupplies(Individual individual) {
+        return false;//todo
+    }
+
+    private boolean validateDeadlines(Individual individual) {
+        return false;//todo
+    }
+
+    private boolean validateMachines(Individual individual) {
+        return false;//todo
+    }
 
     private Population generateChildren(Population parents) {
         //todo
-
         return null;
     }
 }
