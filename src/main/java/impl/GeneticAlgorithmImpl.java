@@ -1,4 +1,11 @@
-public class GeneticAlgorithm {
+package impl;
+
+import api.GeneticAlgorithm;
+import api.Individual;
+import api.InputData;
+import api.Population;
+
+public class GeneticAlgorithmImpl implements GeneticAlgorithm {
     public Individual solveProblemInstance(InputData data) {
 
         int generation = 0;
@@ -57,9 +64,20 @@ public class GeneticAlgorithm {
     }
 
     private boolean validateIndividual(Individual individual) {
-        return validateMachines(individual) && validateDeadlines(individual) && validateSupplies(individual);
+        return validateDeadlines(individual) && validateSupplies(individual);
     }
 
+    /**
+     * Ocena osobnika(potencjalnego rozwiazania) to ilosc  godzin od rozpoczcia prodockcji
+     * do zakocznenia ostatniego z jego taskow.
+     * Czy mniejsza ocena tym lepiej.
+     * Do obliczenia tej wartosci potrzeba daty rozpoczecia produkcji, daty rozpoczecia ostatniego zamowienia
+     * oraz czasu trwania tego zamowienia (z InputData.durations())
+     *
+     * @param individual
+     * @param data
+     * @return
+     */
     private int assessIndividual(Individual individual, InputData data) {
         //todo
         return 0;
@@ -75,10 +93,6 @@ public class GeneticAlgorithm {
     }
 
     private boolean validateDeadlines(Individual individual) {
-        return false;//todo
-    }
-
-    private boolean validateMachines(Individual individual) {
         return false;//todo
     }
 

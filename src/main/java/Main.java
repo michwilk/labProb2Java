@@ -1,3 +1,9 @@
+import api.GeneticAlgorithm;
+import api.Individual;
+import api.InputData;
+import api.Parser;
+import impl.GeneticAlgorithmImpl;
+import impl.ParserImpl;
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
@@ -9,9 +15,9 @@ public class Main {
             System.out.println("Usage: 1st arg-path to input file, 2nd arg path to output file");
             return;
         }
-        Parser parser = new Parser();
+        Parser parser = new ParserImpl();
         InputData inputData = parser.parseInput(args[0]);
-        GeneticAlgorithm geneticAlgorithm = new GeneticAlgorithm();
+        GeneticAlgorithm geneticAlgorithm = new GeneticAlgorithmImpl();
         Individual solution = geneticAlgorithm.solveProblemInstance(inputData);
         parser.parseOutput(args[1], solution);
     }

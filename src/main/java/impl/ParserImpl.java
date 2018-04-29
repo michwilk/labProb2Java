@@ -1,3 +1,6 @@
+package impl;
+
+import api.*;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -10,7 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.IntStream;
 
-public class Parser {
+public class ParserImpl implements Parser{
 
     public void parseOutput(String arg, Individual solution) {
     }
