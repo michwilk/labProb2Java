@@ -13,7 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.IntStream;
 
-public class ParserImpl implements Parser{
+public class ParserImpl implements Parser {
 
     public void parseOutput(String arg, Individual solution) {
     }
@@ -26,16 +26,15 @@ public class ParserImpl implements Parser{
         final int maxGeneration = getInt(jsonInput, "maxGeneration");
         final int populationSize = getInt(jsonInput, "populationSize");
         final Date productionStartDate = parseDate((String) jsonInput.get("productionStartDate"));
+        final Date productionEndDate = parseDate((String) jsonInput.get("productionStartDate"));
         final Set<String> operations = parseStringSet((JSONArray) jsonInput.get("operations"));
         final Set<String> rawMaterials = parseStringSet((JSONArray) jsonInput.get("rawMaterials"));
-        final List<Order> orders = parseOrders((JSONArray) jsonInput.get("orders"));
         final List<Product> products = parseProducts((JSONArray) jsonInput.get("products"));
         final List<Delivery> deliveries = parseDeliveries((JSONArray) jsonInput.get("deliveries"));
-        int[] durations = computeDurationsOfOrders(orders, products);
+        final List<Order> orders = parseOrders((JSONArray) jsonInput.get("orders"), products);
 
-
-        return new InputData(productionStartDate, operations, rawMaterials, orders, products,
-                deliveries, maxGeneration, populationSize, durations);
+        return new InputData(productionStartDate, productionEndDate, operations, rawMaterials, orders, products,
+                deliveries, maxGeneration, populationSize);
     }
 
 
@@ -45,7 +44,6 @@ public class ParserImpl implements Parser{
             deliveries.add(parseDelivery((JSONObject) objectOrder));
         }
         return deliveries;
-
     }
 
     private Delivery parseDelivery(JSONObject objectOrder) throws java.text.ParseException {
@@ -91,20 +89,30 @@ public class ParserImpl implements Parser{
         return ((Long) jsonObject.get(keyVal)).intValue();
     }
 
-    private List<Order> parseOrders(JSONArray array) throws java.text.ParseException {
+    private List<Order> parseOrders(JSONArray array, List<Product> products) throws java.text.ParseException {
         List<Order> orders = new ArrayList<Order>();
         for (Object objectOrder : array) {
-            orders.add(parseOrder((JSONObject) objectOrder));
+            orders.add(parseOrder((JSONObject) objectOrder, products));
         }
         return orders;
     }
 
-    private Order parseOrder(JSONObject objectOrder) throws java.text.ParseException {
+    private Order parseOrder(JSONObject objectOrder, List<Product> products) throws java.text.ParseException {
         final int id = getInt(objectOrder, "id");
         final Date dueDate = parseDate((String) objectOrder.get("dueDate"));
         final int qty = getInt(objectOrder, "qty");
         final int productId = getInt(objectOrder, "productId");
-        return new Order(id, dueDate, qty, productId);
+
+        Product product = products.stream().filter(p -> p.getId() == productId).findFirst().get();
+        int timeFirst = IntStream.of(product.getOperationTimes()).sum();
+        int delay = product.getOperationTimes()[0];
+        for (int j = 1; j < product.getOperationTimes().length; j++) {
+            if (product.getOperationTimes()[j] > product.getOperationTimes()[j - 1]+delay){
+                delay += product.getOperationTimes()[j] - delay;
+            }
+        }
+        int totalTime = timeFirst + (qty - 1) * delay;
+        return new Order(id, dueDate, qty, productId, totalTime);
     }
 
     private Set<String> parseStringSet(JSONArray array) {
@@ -120,24 +128,5 @@ public class ParserImpl implements Parser{
         DateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.ENGLISH);
         Date date = format.parse(dateString);
         return date;
-    }
-
-
-    private int[] computeDurationsOfOrders(List<Order> orders, List<Product> products) {
-        int[] durations = new int[orders.size()];
-        for (int i = 0; i < orders.size(); i++) {
-            Order order = orders.get(i);
-            Product product = products.stream().filter(p -> p.getId() == order.getProductId()).findFirst().get();
-            int timeFirst = IntStream.of(product.getOperationTimes()).sum();
-            int delay = product.getOperationTimes()[0];
-            for (int j = 1; j < product.getOperationTimes().length; j++) {
-                if (product.getOperationTimes()[i] > product.getOperationTimes()[i - 1] + delay) {
-                    delay += product.getOperationTimes()[i] - delay;
-                }
-            }
-            int totalTime = timeFirst + (order.getQty() - 1) * delay;
-            durations[i] = totalTime;
-        }
-        return durations;
     }
 }

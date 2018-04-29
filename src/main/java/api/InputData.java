@@ -6,27 +6,27 @@ import java.util.Set;
 
 public class InputData {
     private final Date productionStartDate;
+    private final Date productionEndDate;
     private final Set<String> operations;
     private final Set<String> rawMaterials;
     private final List<Order> orders;
     private final List<Product> products;
-    private final List<Delivery> deliveres;
+    private final List<Delivery> deliveries;
     private final int maxGeneration;
     private final int populationSize;
-    private final int durations[];
 
-    public InputData(Date productionStartDate, Set<String> operations, Set<String> rawMaterials,
-                     List<Order> orders, List<Product> products, List<Delivery> deliveres,
-                     int maxGeneration, int populationSize, int[] durations) {
+    public InputData(Date productionStartDate, Date productionEndDate, Set<String> operations, Set<String> rawMaterials,
+                     List<Order> orders, List<Product> products, List<Delivery> deliveries,
+                     int maxGeneration, int populationSize) {
         this.productionStartDate = productionStartDate;
+        this.productionEndDate = productionEndDate;
         this.operations = operations;
         this.rawMaterials = rawMaterials;
         this.orders = orders;
         this.products = products;
-        this.deliveres = deliveres;
+        this.deliveries = deliveries;
         this.maxGeneration = maxGeneration;
         this.populationSize = populationSize;
-        this.durations = durations;
     }
 
     public Date getProductionStartDate() {
@@ -49,8 +49,8 @@ public class InputData {
         return products;
     }
 
-    public List<Delivery> getDeliveres() {
-        return deliveres;
+    public List<Delivery> getDeliveries() {
+        return deliveries;
     }
 
     public int getMaxGeneration() {
@@ -61,7 +61,7 @@ public class InputData {
         return populationSize;
     }
 
-    public int[] getDurations() {
-        return durations;
+    public Date getProductionEndDate() {
+        return productionEndDate;
     }
 }

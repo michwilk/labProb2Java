@@ -8,12 +8,19 @@ public class Order {
     private final Date dueDate;
     private final int qty;
     private final int productId;
+    private final int duration; //czas trwania kazdego z zamowien (w godzinach)
 
-    public Order(int id, Date dueDate, int qty, int productId) {
+    public Order(int id, Date dueDate, int qty, int productId, int duration) {
         this.id = id;
         this.dueDate = dueDate;
         this.qty = qty;
         this.productId = productId;
+        this.duration = duration;
+
+    }
+
+    public int getDuration() {
+        return duration;
     }
 
     public int getId() {

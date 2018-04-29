@@ -1,5 +1,4 @@
 {
-  "productionStartDate": "2018-06-01T00:00:00",
   "operations": [
     "frezowanie",
     "wiercenie",
@@ -154,5 +153,7 @@
     }
   ],
   "maxGeneration": 2000,
-  "populationSize":100
+  "populationSize": 100,
+  "productionStartDate": "2018-06-01T00:00:00",
+  "productionEndDate": "2018-09-01T00:00:00"
 }

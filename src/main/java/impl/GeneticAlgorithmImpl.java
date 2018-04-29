@@ -1,9 +1,13 @@
 package impl;
 
-import api.GeneticAlgorithm;
-import api.Individual;
-import api.InputData;
-import api.Population;
+import api.*;
+
+import java.util.Date;
+import java.util.List;
+
+import static impl.Util.MILLI_TO_HOUR;
+import static impl.Util.generateDateBetween;
+import static impl.Util.hoursDifference;
 
 public class GeneticAlgorithmImpl implements GeneticAlgorithm {
     public Individual solveProblemInstance(InputData data) {
@@ -53,7 +57,6 @@ public class GeneticAlgorithmImpl implements GeneticAlgorithm {
     private Individual generateIndividual(InputData data) {
         int tryCount = 0;
         Individual individual;
-
         do {
             tryCount++;
             individual = randomIndividual(data);
@@ -79,22 +82,52 @@ public class GeneticAlgorithmImpl implements GeneticAlgorithm {
      * @return
      */
     private int assessIndividual(Individual individual, InputData data) {
-        //todo
-        return 0;
+        Date latestTasBeginningDate = individual.getBeginningDates()[0];
+        int durationOfLastTask = data.getOrders().get(0).getDuration();
+
+        for (int i = 1; i < individual.getBeginningDates().length; i++) {
+            Date date = individual.getBeginningDates()[i];
+            if (date.after(latestTasBeginningDate)) {
+                latestTasBeginningDate = date;
+                durationOfLastTask = data.getOrders().get(i).getDuration();
+            }
+        }
+        return hoursDifference(latestTasBeginningDate, data.getProductionStartDate()) + durationOfLastTask;
     }
 
     private Individual randomIndividual(InputData data) {
-        //todo przed walidacja
-        return null;
+        Date[] beginningDates = new Date[data.getOrders().size()];
+        Date nextPossibleTaskDate = data.getProductionStartDate();
+        Date endOfFreePeriod = new Date(data.getProductionEndDate().getTime() - getTotalTimeOfAllOrdersInHours(data) * MILLI_TO_HOUR);
+        List<Order> orders = data.getOrders();
+        for (int i = 0; i < beginningDates.length; i++) {
+            beginningDates[i] = generateDateBetween(nextPossibleTaskDate, endOfFreePeriod);
+
+            long currOrderDurationInMillis = orders.get(i).getDuration() * MILLI_TO_HOUR;
+            //przesun poczatek przedzialu losowania o czas trwania taska do przodu
+            nextPossibleTaskDate = new Date(beginningDates[i].getTime() + currOrderDurationInMillis);
+            //przesun koniec przedzialu losowania o czas trwania taska do przodu
+            endOfFreePeriod = new Date(endOfFreePeriod.getTime() + currOrderDurationInMillis);
+        }
+        return new Individual(beginningDates);
+    }
+
+    private int getTotalTimeOfAllOrdersInHours(InputData data) {
+        int totalHours = 0;
+        for (Order order : data.getOrders()) {
+            totalHours += order.getDuration();
+        }
+        return totalHours;
+    }
+
+    private boolean validateDeadlines(Individual individual) {
+        return false;//todo
     }
 
     private boolean validateSupplies(Individual individual) {
         return false;//todo
     }
 
-    private boolean validateDeadlines(Individual individual) {
-        return false;//todo
-    }
 
     private Population generateChildren(Population parents) {
         //todo
