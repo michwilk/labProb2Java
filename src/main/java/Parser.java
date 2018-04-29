@@ -21,15 +21,26 @@ public class Parser {
         final Date productionStartDate = parseDate((String) jsonInput.get("productionStartDate"));
         final Set<String> operations = parseStringSet((JSONArray) jsonInput.get("operations"));
         final Set<String> rawMaterials = parseStringSet((JSONArray) jsonInput.get("rawMaterials"));
-        final Set<Order> orders = parseOrders((JSONArray) jsonInput.get("orders"));
-        final Set<Product> products = parseProducts((JSONArray) jsonInput.get("products"));
-        final Set<Delivery> deliveries = parseDeliveries((JSONArray) jsonInput.get("deliveries"));
+        final List<Order> orders = parseOrders((JSONArray) jsonInput.get("orders"));
+        final List<Product> products = parseProducts((JSONArray) jsonInput.get("products"));
+        final List<Delivery> deliveries = parseDeliveries((JSONArray) jsonInput.get("deliveries"));
+        int[] durations = computeDurationsOfOrders(orders,products);
 
-        return new InputData(productionStartDate, operations, rawMaterials, orders, products, deliveries, maxGeneration, populationSize);
+
+        return new InputData(productionStartDate, operations, rawMaterials, orders, products,
+                deliveries, maxGeneration, populationSize, durations);
     }
 
-    private Set<Delivery> parseDeliveries(JSONArray array) throws java.text.ParseException {
-        Set<Delivery> deliveries = new HashSet<Delivery>();
+    private int[] computeDurationsOfOrders(List<Order> orders, List<Product> products) {
+        int[] durations = new int[orders.size()];
+        for (int i = 0; i < orders.size(); i++) {
+            Order order = orders.get(i);
+
+        }
+    }
+
+    private List<Delivery> parseDeliveries(JSONArray array) throws java.text.ParseException {
+        List<Delivery> deliveries = new ArrayList<Delivery>();
         for (Object objectOrder : array) {
             deliveries.add(parseDelivery((JSONObject) objectOrder));
         }
@@ -51,8 +62,8 @@ public class Parser {
 
     }
 
-    private Set<Product> parseProducts(JSONArray array) {
-        Set<Product> products = new HashSet<Product>();
+    private List<Product> parseProducts(JSONArray array) {
+        List<Product> products = new ArrayList<Product>();
         for (Object objectOrder : array) {
             products.add(parseProduct((JSONObject) objectOrder));
         }
@@ -80,8 +91,8 @@ public class Parser {
         return ((Long) jsonObject.get(keyVal)).intValue();
     }
 
-    private Set<Order> parseOrders(JSONArray array) throws java.text.ParseException {
-        Set<Order> orders = new HashSet<Order>();
+    private List<Order> parseOrders(JSONArray array) throws java.text.ParseException {
+        List<Order> orders = new ArrayList<Order>();
         for (Object objectOrder : array) {
             orders.add(parseOrder((JSONObject) objectOrder));
         }

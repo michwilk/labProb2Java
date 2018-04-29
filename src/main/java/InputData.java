@@ -1,19 +1,21 @@
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 public class InputData {
     private final Date productionStartDate;
     private final Set<String> operations;
     private final Set<String> rawMaterials;
-    private final Set<Order> orders;
-    private final Set<Product> products;
-    private final Set<Delivery> deliveres;
+    private final List<Order> orders;
+    private final List<Product> products;
+    private final List<Delivery> deliveres;
     private final int maxGeneration;
     private final int populationSize;
+    private final int durations[];
 
     public InputData(Date productionStartDate, Set<String> operations, Set<String> rawMaterials,
-                     Set<Order> orders, Set<Product> products, Set<Delivery> deliveres,
-                     int maxGeneration, int populationSize) {
+                     List<Order> orders, List<Product> products, List<Delivery> deliveres,
+                     int maxGeneration, int populationSize, int[] durations) {
         this.productionStartDate = productionStartDate;
         this.operations = operations;
         this.rawMaterials = rawMaterials;
@@ -22,8 +24,8 @@ public class InputData {
         this.deliveres = deliveres;
         this.maxGeneration = maxGeneration;
         this.populationSize = populationSize;
+        this.durations = durations;
     }
-
 
     public Date getProductionStartDate() {
         return productionStartDate;
@@ -37,15 +39,15 @@ public class InputData {
         return rawMaterials;
     }
 
-    public Set<Order> getOrders() {
+    public List<Order> getOrders() {
         return orders;
     }
 
-    public Set<Product> getProducts() {
+    public List<Product> getProducts() {
         return products;
     }
 
-    public Set<Delivery> getDeliveres() {
+    public List<Delivery> getDeliveres() {
         return deliveres;
     }
 
@@ -55,5 +57,9 @@ public class InputData {
 
     public int getPopulationSize() {
         return populationSize;
+    }
+
+    public int[] getDurations() {
+        return durations;
     }
 }
