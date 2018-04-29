@@ -59,15 +59,16 @@ public class GeneticAlgorithmImpl implements GeneticAlgorithm {
         Individual individual;
         do {
             tryCount++;
-            individual = randomIndividual(data);
             if (tryCount > 100) throw new IllegalArgumentException("Cant create proper individual");
-        } while (!validateIndividual(individual));
+            individual = randomIndividual(data);
+        } while (!validateIndividual(individual, data));
 
         return individual;
     }
 
-    private boolean validateIndividual(Individual individual) {
-        return validateDeadlines(individual) && validateSupplies(individual);
+    private boolean validateIndividual(Individual individual, InputData data) {
+        SuppliesValidator suppliesValidator = new SuppliesValidator();
+        return validateDeadlines(individual, data) && suppliesValidator.validateSupplies(individual, data);
     }
 
     /**
@@ -120,12 +121,16 @@ public class GeneticAlgorithmImpl implements GeneticAlgorithm {
         return totalHours;
     }
 
-    private boolean validateDeadlines(Individual individual) {
-        return false;//todo
-    }
-
-    private boolean validateSupplies(Individual individual) {
-        return false;//todo
+    private boolean validateDeadlines(Individual individual, InputData data) {
+        for (int i = 0; i < individual.getBeginningDates().length; i++) {
+            Order currOrder = data.getOrders().get(i);
+            Date finishingDateOfOrderI = new Date(individual.getBeginningDates()[i].getTime() +
+                    currOrder.getDuration() * MILLI_TO_HOUR);
+            if (finishingDateOfOrderI.after(currOrder.getDueDate())) {
+                return false;
+            }
+        }
+        return true;
     }
 
 
