@@ -22,6 +22,7 @@ public class Main {
         InputData inputData = parser.parseInput(args[0]);
         GeneticAlgorithm geneticAlgorithm = new GeneticAlgorithmImpl();
         Individual solution = geneticAlgorithm.solveProblemInstance(inputData);
+        System.out.println(solution);
         parser.parseOutput(args[1], solution);
     }
 }

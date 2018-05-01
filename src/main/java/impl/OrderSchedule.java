@@ -32,4 +32,14 @@ public class OrderSchedule {
     public Date getEndDate() {
         return endDate;
     }
+
+    @Override
+    public String toString() {
+        return "OrderSchedule{" +
+                "id=" + id +
+                ", duration=" + duration +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                '}';
+    }
 }

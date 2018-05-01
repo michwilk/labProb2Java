@@ -17,7 +17,7 @@ public class Roulette {
         for (int i = 0; i < rouletteIndividuals.length; i++) {
             rouletteIndividuals[i] = new RouletteIndividual();
             rouletteIndividuals[i].individual = population.getIndividuals().get(i);
-            rouletteIndividuals[i].reverseScore = 50000 / rouletteIndividuals[i].individual.getScore();
+            rouletteIndividuals[i].reverseScore = 5000000 / rouletteIndividuals[i].individual.getScore();
         }
 
         Arrays.sort(rouletteIndividuals);

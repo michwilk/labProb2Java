@@ -11,6 +11,15 @@ import java.util.List;
 public class Individual {
     //harmonogram dla kazdego zamowienia
     private final List<OrderSchedule> orderSchedules;
+
+    @Override
+    public String toString() {
+        return "Individual{" +
+                "orderSchedules=" + orderSchedules +
+                ", score=" + score +
+                '}';
+    }
+
     //Ocena osobnika - ilosc godzin od rozpoczenia do zakonczenia wsystkich zamownien
     //czym mniejsza tym lepiej
     private final int score;

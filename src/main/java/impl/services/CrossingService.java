@@ -1,9 +1,9 @@
-package impl;
+package impl.services;
 
 import api.Individual;
 import api.InputData;
+import impl.OrderSchedule;
 
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
