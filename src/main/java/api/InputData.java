@@ -64,4 +64,14 @@ public class InputData {
     public Date getProductionEndDate() {
         return productionEndDate;
     }
+
+
+    public Product getProductWithId(int productId){
+        for(Product product :products){
+            if(product.getId() == productId){
+                return product;
+            }
+        }
+        throw new IllegalArgumentException("No product with this id");
+    }
 }

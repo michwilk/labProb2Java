@@ -23,14 +23,15 @@ public class SuppliesValidator {
             inventoryEventsQueue.add(event);
         }
 
-        for (int i = 0; i < data.getOrders().size(); i++) {
-            Order order = data.getOrders().get(i);
+        for (Order order : data.getOrders()) {
             final Map<String, Integer> materialAdjustment = new HashMap<>();
-            Map<String, Integer> bom = data.getProducts().stream().filter(p -> p.getId() == order.getProductId()).findFirst().get().getBom();
+            Map<String, Integer> bom = data.getProductWithId(order.getProductId()).getBom();
             for (String material : bom.keySet()) {
                 materialAdjustment.put(material, -bom.get(material) * order.getQty());
             }
-            InventoryEvent event = new InventoryEvent(individual.getBeginningDates()[i], materialAdjustment);
+
+            OrderSchedule orderSchedule = individual.getScheduleForOrderWithId(order.getId());
+            InventoryEvent event = new InventoryEvent(orderSchedule.getStartDate(), materialAdjustment);
             inventoryEventsQueue.add(event);
         }
 

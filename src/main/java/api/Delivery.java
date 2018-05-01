@@ -6,6 +6,7 @@ import java.util.Map;
 public class Delivery {
     private final int id;
     private final Date date;
+    //Mapa NazwaSurowca->Dostaczona ilsoc
     private final Map<String,Integer> materialsDelivered;
 
     public Delivery(int id, Date date, Map<String, Integer> materialsDelivered) {

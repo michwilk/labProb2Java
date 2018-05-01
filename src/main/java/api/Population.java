@@ -1,20 +1,19 @@
 package api;
 
+import java.util.Collections;
+import java.util.List;
+
+
+//Populacja - zbior osobnikow
 public class Population {
 
-    private final Individual[] individuals;
-    private final int[] scores;
+    private final List<Individual> individuals;
 
-    public Population(Individual[] individuals, int[] scores) {
-        this.individuals = individuals;
-        this.scores = scores;
+    public Population(List<Individual> individuals) {
+        this.individuals = Collections.unmodifiableList(individuals);
     }
 
-    public int[] getScores() {
-        return scores;
-    }
-
-    public Individual[] getIndividuals() {
+    public List<Individual> getIndividuals() {
         return individuals;
     }
 }
