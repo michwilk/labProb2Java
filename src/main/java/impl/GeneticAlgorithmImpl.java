@@ -16,6 +16,10 @@ public class GeneticAlgorithmImpl implements GeneticAlgorithm {
      * @param data
      * @return
      */
+    CrossingService crossingService = new CrossingService();
+    ScoreService scoreService = new ScoreService();
+
+
     public Individual solveProblemInstance(InputData data) {
 
         int generation = 0;
@@ -23,7 +27,7 @@ public class GeneticAlgorithmImpl implements GeneticAlgorithm {
         while (generation < data.getMaxGeneration()) {
             generation++;
             System.out.println("Generation " + generation);
-            Population children = generateChildren(population);
+            Population children = generateChildren(population, data);
             population = children;
         }
         return findBestIndividual(population);
@@ -70,7 +74,7 @@ public class GeneticAlgorithmImpl implements GeneticAlgorithm {
             tryCount++;
             if (tryCount > 100) throw new IllegalArgumentException("Cant create proper individual");
             schedule = randomOrdersSchedule(data);
-            score = assessOrdersSchedule(schedule, data);
+            score = scoreService.assessOrdersSchedule(schedule, data);
             result = new Individual(schedule, score);
         } while (!validateIndvidual(result, data));
 
@@ -89,25 +93,9 @@ public class GeneticAlgorithmImpl implements GeneticAlgorithm {
         SuppliesValidator suppliesValidator = new SuppliesValidator();
         OverLappingValidator overLappingValidator = new OverLappingValidator();
         return suppliesValidator.validateSupplies(individual, data) &&
-                overLappingValidator.validateOverLappping(individual, data);
+                overLappingValidator.validateOverLapping(individual, data);
     }
 
-    /**
-     * Ocena harmonogramu(potencjalnego rozwiazania) to ilosc  godzin od rozpoczcia prodockcji
-     * do zakocznenia ostatniego z jego zamownien(Order).
-     * Czy mniejsza ocena tym lepiej.
-     * Do obliczenia tej wartosci potrzeba daty rozpoczecia produkcji,
-     * oraz daty zakonczenia ostatniego taska
-     *
-     * @param orderSchedule
-     * @param data
-     * @return
-     */
-    private int assessOrdersSchedule(List<OrderSchedule> orderSchedule, InputData data) {
-        Date endOfLastOrder = orderSchedule.stream().map(OrderSchedule::getEndDate).max(Date::compareTo).get();
-        //todo sprawdzic to
-        return hoursDifference(endOfLastOrder, data.getProductionStartDate());
-    }
 
     /**
      * Generuje losowy harmonogram zamowien. Wylosowane okresy startu zamowien sa przed deadlineami
@@ -126,9 +114,23 @@ public class GeneticAlgorithmImpl implements GeneticAlgorithm {
         return Collections.unmodifiableList(result);
     }
 
-    private Population generateChildren(Population parents) {
+    private Population generateChildren(Population parents, InputData inputData) {
         //todo
         //one point crossover z 2 rodzicow 2 potomkow
-        return null;
+        List<Individual> individuals = new ArrayList<>();
+        Roulette roulette = new Roulette(parents);
+        for (int i = 0; i < parents.getIndividuals().size(); i++) {
+            Individual child;
+            do {
+                Individual parent1 = roulette.getNextRandom();
+                Individual parent2 = roulette.getNextRandom();
+                child = crossingService.performCross(parent1, parent2, inputData);
+                System.out.println("Attempt to cross 2 invididuals");
+            } while (!validateIndvidual(child, inputData));
+            individuals.add(child);
+        }
+        return new Population(individuals);
     }
+
+
 }

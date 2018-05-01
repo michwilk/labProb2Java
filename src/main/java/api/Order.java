@@ -6,9 +6,10 @@ import java.util.Date;
 public class Order {
     private final int id;
     private final Date dueDate;
-    private final int qty;
     private final int productId;
-    private final int duration; //czas trwania kazdego z zamowien (w godzinach)
+    private final int qty;
+    //czas trwania zamowienia (w godzinach)
+    private final int duration;
 
     public Order(int id, Date dueDate, int qty, int productId, int duration) {
         this.id = id;
@@ -37,19 +38,5 @@ public class Order {
 
     public int getProductId() {
         return productId;
-    }
-
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Order order = (Order) o;
-        return id == order.id;
-    }
-
-    @Override
-    public int hashCode() {
-        return id;
     }
 }

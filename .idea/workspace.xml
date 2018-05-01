@@ -2,17 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a31b5e24-62b6-452b-8a56-53d12e39780c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/impl/OverLappingValidator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/impl/CrossingService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/impl/ScoreService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/api/Delivery.java" afterPath="$PROJECT_DIR$/src/main/java/api/Delivery.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/api/Individual.java" afterPath="$PROJECT_DIR$/src/main/java/api/Individual.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/api/InputData.java" afterPath="$PROJECT_DIR$/src/main/java/api/InputData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/api/Population.java" afterPath="$PROJECT_DIR$/src/main/java/api/Population.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/api/Order.java" afterPath="$PROJECT_DIR$/src/main/java/api/Order.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/api/Product.java" afterPath="$PROJECT_DIR$/src/main/java/api/Product.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/impl/GeneticAlgorithmImpl.java" afterPath="$PROJECT_DIR$/src/main/java/impl/GeneticAlgorithmImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/impl/OrderSchedule.java" afterPath="$PROJECT_DIR$/src/main/java/impl/OrderSchedule.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/impl/Roulette.java" afterPath="$PROJECT_DIR$/src/main/java/impl/Roulette.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/impl/SuppliesValidator.java" afterPath="$PROJECT_DIR$/src/main/java/impl/SuppliesValidator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/impl/OverLappingValidator.java" afterPath="$PROJECT_DIR$/src/main/java/impl/OverLappingValidator.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -25,33 +21,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GeneticAlgorithmImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/impl/GeneticAlgorithmImpl.java">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="73" column="53" lean-forward="false" selection-start-line="73" selection-start-column="53" selection-end-line="73" selection-end-column="53" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Util.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/impl/Util.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="15" column="47" lean-forward="false" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
+            <state relative-caret-position="108">
+              <caret line="14" column="47" lean-forward="false" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Roulette.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/impl/Roulette.java">
+      <file leaf-file-name="Product.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/api/Product.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+            <state relative-caret-position="212">
+              <caret line="25" column="25" lean-forward="true" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+              <folding>
+                <element signature="e#623#624#0" expanded="true" />
+                <element signature="e#660#661#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Order.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/api/Order.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="576">
+              <caret line="40" column="5" lean-forward="false" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+              <folding>
+                <element signature="e#749#750#0" expanded="true" />
+                <element signature="e#781#782#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GeneticAlgorithmImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/impl/GeneticAlgorithmImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="156">
+              <caret line="126" column="22" lean-forward="false" selection-start-line="126" selection-start-column="22" selection-end-line="126" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -62,7 +72,7 @@
       <file leaf-file-name="SuppliesValidator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/impl/SuppliesValidator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-40">
+            <state relative-caret-position="18">
               <caret line="46" column="33" lean-forward="false" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -71,24 +81,47 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InputData.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/api/InputData.java">
+      <file leaf-file-name="ScoreService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/impl/ScoreService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="68" column="35" lean-forward="false" selection-start-line="68" selection-start-column="19" selection-end-line="68" selection-end-column="35" />
+            <state relative-caret-position="0">
+              <caret line="9" column="25" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="25" />
               <folding>
-                <element signature="e#1489#1490#0" expanded="true" />
-                <element signature="e#1520#1521#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ParserImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/impl/ParserImpl.java">
+      <file leaf-file-name="Roulette.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/impl/Roulette.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1353">
-              <caret line="126" column="10" lean-forward="false" selection-start-line="126" selection-start-column="10" selection-end-line="126" selection-end-column="10" />
+            <state relative-caret-position="198">
+              <caret line="11" column="16" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CrossingService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/impl/CrossingService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="23" column="55" lean-forward="false" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OverLappingValidator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/impl/OverLappingValidator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="11" column="28" lean-forward="false" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -99,46 +132,8 @@
       <file leaf-file-name="Individual.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/api/Individual.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="37" column="82" lean-forward="false" selection-start-line="37" selection-start-column="82" selection-end-line="37" selection-end-column="82" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#707#708#0" expanded="true" />
-                <element signature="e#744#745#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OverLappingValidator.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/impl/OverLappingValidator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Delivery.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/api/Delivery.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="14" column="38" lean-forward="true" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrderSchedule.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/impl/OrderSchedule.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="14">
-              <caret line="12" column="11" lean-forward="false" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+            <state relative-caret-position="139">
+              <caret line="17" column="11" lean-forward="false" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -160,6 +155,7 @@
       <find>bomjson</find>
       <find>ass</find>
       <find>emptyList(</find>
+      <find>asses</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -191,7 +187,6 @@
         <option value="$PROJECT_DIR$/src/main/java/GeneticAlgorithm.java" />
         <option value="$PROJECT_DIR$/src/main/java/api/Parser.java" />
         <option value="$PROJECT_DIR$/src/main/java/api/GeneticAlgorithm.java" />
-        <option value="$PROJECT_DIR$/src/main/java/api/Order.java" />
         <option value="$PROJECT_DIR$/input.json" />
         <option value="$PROJECT_DIR$/src/main/java/impl/ParserImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/impl/Util.java" />
@@ -199,18 +194,22 @@
         <option value="$PROJECT_DIR$/src/main/java/impl/OrderSchedule.java" />
         <option value="$PROJECT_DIR$/src/main/java/api/Delivery.java" />
         <option value="$PROJECT_DIR$/src/main/java/api/Population.java" />
-        <option value="$PROJECT_DIR$/src/main/java/api/Product.java" />
         <option value="$PROJECT_DIR$/src/main/java/api/InputData.java" />
         <option value="$PROJECT_DIR$/src/main/java/impl/SuppliesValidator.java" />
         <option value="$PROJECT_DIR$/src/main/java/api/Individual.java" />
         <option value="$PROJECT_DIR$/src/main/java/impl/Roulette.java" />
-        <option value="$PROJECT_DIR$/src/main/java/impl/GeneticAlgorithmImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/api/Order.java" />
+        <option value="$PROJECT_DIR$/src/main/java/api/Product.java" />
         <option value="$PROJECT_DIR$/src/main/java/impl/OverLappingValidator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/impl/Crossing.java" />
+        <option value="$PROJECT_DIR$/src/main/java/impl/ScoreService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/impl/CrossingService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/impl/GeneticAlgorithmImpl.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="254" />
+    <option name="x" value="299" />
     <option name="y" value="-4" />
     <option name="width" value="636" />
     <option name="height" value="556" />
@@ -367,7 +366,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1295" height="772" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35585585" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -381,7 +379,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16216215" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16216215" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32882884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -407,36 +405,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="14" column="47" lean-forward="false" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/api/GeneticAlgorithm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/api/Individual.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#707#708#0" expanded="true" />
-            <element signature="e#744#745#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/impl/ParserImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2034">
@@ -460,7 +428,7 @@
         <state relative-caret-position="234">
           <caret line="15" column="47" lean-forward="true" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -586,8 +554,8 @@
         <state relative-caret-position="198">
           <caret line="11" column="61" lean-forward="false" selection-start-line="11" selection-start-column="61" selection-end-line="11" selection-end-column="61" />
           <folding>
-            <element signature="e#523#524#0" expanded="false" />
-            <element signature="e#554#555#0" expanded="false" />
+            <element signature="e#519#520#0" expanded="false" />
+            <element signature="e#550#551#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -616,14 +584,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="21" lean-forward="false" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar!/org/json/simple/JSONArray.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -640,13 +600,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/api.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/impl.java" />
-    <entry file="file://$PROJECT_DIR$/input.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2577">
-          <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Desktop/jdk1.8.0_144/src.zip!/java/util/Date.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="14526">
@@ -662,16 +615,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4482">
           <caret line="294" column="16" lean-forward="false" selection-start-line="294" selection-start-column="16" selection-end-line="294" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="14" column="47" lean-forward="false" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -702,14 +645,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/Desktop/jdk1.8.0_144/src.zip!/java/util/Comparator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2675">
-          <caret line="108" column="17" lean-forward="false" selection-start-line="108" selection-start-column="17" selection-end-line="108" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Desktop/jdk1.8.0_144/src.zip!/java/util/Collections.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
@@ -726,11 +661,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/api/Order.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/api/InputData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="608">
+          <caret line="68" column="35" lean-forward="false" selection-start-line="68" selection-start-column="19" selection-end-line="68" selection-end-column="35" />
+          <folding>
+            <element signature="e#1489#1490#0" expanded="true" />
+            <element signature="e#1520#1521#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -752,84 +690,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/api/Product.java">
+    <entry file="jar://$USER_HOME$/Desktop/jdk1.8.0_144/src.zip!/java/util/Arrays.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-220">
-          <caret line="8" column="40" lean-forward="false" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+        <state relative-caret-position="139">
+          <caret line="1430" column="43" lean-forward="true" selection-start-line="1430" selection-start-column="43" selection-end-line="1430" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/impl/OrderSchedule.java">
+    <entry file="jar://$USER_HOME$/Desktop/jdk1.8.0_144/src.zip!/java/util/Comparator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14">
-          <caret line="12" column="11" lean-forward="false" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="139">
+          <caret line="108" column="17" lean-forward="false" selection-start-line="108" selection-start-column="17" selection-end-line="108" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/api/InputData.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="68" column="35" lean-forward="false" selection-start-line="68" selection-start-column="19" selection-end-line="68" selection-end-column="35" />
-          <folding>
-            <element signature="e#1489#1490#0" expanded="true" />
-            <element signature="e#1520#1521#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="288">
+          <caret line="16" column="21" lean-forward="false" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/impl/SuppliesValidator.java">
+    <entry file="file://$PROJECT_DIR$/input.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-40">
-          <caret line="46" column="33" lean-forward="false" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/api/Individual.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="37" column="82" lean-forward="false" selection-start-line="37" selection-start-column="82" selection-end-line="37" selection-end-column="82" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#707#708#0" expanded="true" />
-            <element signature="e#744#745#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/impl/ParserImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1353">
-          <caret line="126" column="10" lean-forward="false" selection-start-line="126" selection-start-column="10" selection-end-line="126" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/impl/Roulette.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/impl/GeneticAlgorithmImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="73" column="53" lean-forward="false" selection-start-line="73" selection-start-column="53" selection-end-line="73" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="266">
+          <caret line="157" column="20" lean-forward="false" selection-start-line="157" selection-start-column="3" selection-end-line="157" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -845,16 +734,128 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/impl/Util.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="15" column="47" lean-forward="false" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
+        <state relative-caret-position="201">
+          <caret line="13" column="66" lean-forward="true" selection-start-line="13" selection-start-column="66" selection-end-line="13" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/impl/ParserImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="759">
+          <caret line="126" column="10" lean-forward="false" selection-start-line="126" selection-start-column="10" selection-end-line="126" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/impl/OrderSchedule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="11" lean-forward="false" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/impl/Roulette.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="16" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/api/Individual.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="17" column="11" lean-forward="false" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/impl/CrossingService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="23" column="55" lean-forward="false" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="14" column="47" lean-forward="false" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/api/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="40" column="5" lean-forward="false" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+          <folding>
+            <element signature="e#749#750#0" expanded="true" />
+            <element signature="e#781#782#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/api/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="25" column="25" lean-forward="true" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+          <folding>
+            <element signature="e#623#624#0" expanded="true" />
+            <element signature="e#660#661#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/impl/SuppliesValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="46" column="33" lean-forward="false" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/impl/ScoreService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="9" column="25" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/impl/OverLappingValidator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+        <state relative-caret-position="198">
+          <caret line="11" column="28" lean-forward="false" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/impl/GeneticAlgorithmImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="126" column="22" lean-forward="false" selection-start-line="126" selection-start-column="22" selection-end-line="126" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
