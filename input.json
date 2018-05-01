@@ -112,31 +112,31 @@
   "orders": [
     {
       "id": 1,
-      "dueDate": "2018-06-04T00:00:00",
+      "dueDate": "2018-06-20T00:00:00",
       "productId": 1,
       "qty": 4
     },
     {
       "id": 2,
-      "dueDate": "2018-06-04T00:00:00",
+      "dueDate": "2018-06-29T00:00:00",
       "productId": 2,
       "qty": 6
     },
     {
       "id": 3,
-      "dueDate": "2018-06-04T00:00:00",
+      "dueDate": "2018-07-04T00:00:00",
       "productId": 3,
       "qty": 11
     },
     {
       "id": 4,
-      "dueDate": "2018-06-04T00:00:00",
+      "dueDate": "2018-07-08T00:00:00",
       "productId": 3,
       "qty": 2
     },
     {
       "id": 5,
-      "dueDate": "2018-06-04T00:00:00",
+      "dueDate": "2018-06-22T00:00:00",
       "productId": 5,
       "qty": 9
     }
@@ -146,9 +146,9 @@
       "id": 1,
       "date": "2018-06-01T00:00:00",
       "materialsDelivered": {
-        "metal": 50,
-        "farba": 50,
-        "opakowanie": 50
+        "metal": 1000,
+        "farba":1000,
+        "opakowanie": 1000
       }
     }
   ],

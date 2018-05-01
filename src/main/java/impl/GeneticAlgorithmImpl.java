@@ -6,7 +6,6 @@ import java.util.*;
 
 import static impl.Util.MILLI_TO_HOUR;
 import static impl.Util.generateDateBetween;
-import static impl.Util.hoursDifference;
 
 public class GeneticAlgorithmImpl implements GeneticAlgorithm {
 

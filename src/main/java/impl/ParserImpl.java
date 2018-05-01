@@ -26,7 +26,7 @@ public class ParserImpl implements Parser {
         final int maxGeneration = getInt(jsonInput, "maxGeneration");
         final int populationSize = getInt(jsonInput, "populationSize");
         final Date productionStartDate = parseDate((String) jsonInput.get("productionStartDate"));
-        final Date productionEndDate = parseDate((String) jsonInput.get("productionStartDate"));
+        final Date productionEndDate = parseDate((String) jsonInput.get("productionEndDate"));
         final Set<String> operations = parseStringSet((JSONArray) jsonInput.get("operations"));
         final Set<String> rawMaterials = parseStringSet((JSONArray) jsonInput.get("rawMaterials"));
         final List<Product> products = parseProducts((JSONArray) jsonInput.get("products"));

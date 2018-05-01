@@ -35,17 +35,18 @@ public class SuppliesValidator {
             inventoryEventsQueue.add(event);
         }
 
-        Map<String, Integer> InventoryState = new HashMap<>();
+        Map<String, Integer> inventoryState = new HashMap<>();
         for (String material : data.getRawMaterials()) {
-            InventoryState.put(material, 0);
+            inventoryState.put(material, 0);
         }
         while (!inventoryEventsQueue.isEmpty()) {
             Map<String, Integer> materialAdjustment = inventoryEventsQueue.poll().materialAdjustment;
             for (String material : materialAdjustment.keySet()) {
-                int newState = InventoryState.get(material) + materialAdjustment.get(material);
+                int newState = inventoryState.get(material) + materialAdjustment.get(material);
                 if (newState < 0) {
                     return false;
                 }
+                inventoryState.put(material,newState);
             }
         }
         return true;
